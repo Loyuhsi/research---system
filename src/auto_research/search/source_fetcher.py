@@ -5,17 +5,55 @@ from __future__ import annotations
 import datetime as dt
 import logging
 import re
-import ssl
+
+import ipaddress
 import urllib.error
+import urllib.parse
 import urllib.request
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
+from socket import getaddrinfo, AF_INET, AF_INET6
 from typing import List, Optional, Protocol
 
 from .models import FetchResult, SearchResult
 
 logger = logging.getLogger(__name__)
+
+# SSRF protection — block private/internal IP ranges
+_BLOCKED_NETWORKS = [
+    ipaddress.ip_network("10.0.0.0/8"),
+    ipaddress.ip_network("172.16.0.0/12"),
+    ipaddress.ip_network("192.168.0.0/16"),
+    ipaddress.ip_network("127.0.0.0/8"),
+    ipaddress.ip_network("169.254.0.0/16"),  # link-local
+    ipaddress.ip_network("::1/128"),
+    ipaddress.ip_network("fc00::/7"),  # unique local
+    ipaddress.ip_network("fe80::/10"),  # link-local v6
+]
+
+
+def validate_url_not_internal(url: str) -> None:
+    """Raise ValueError if URL resolves to a private/internal IP (SSRF protection)."""
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        raise ValueError(f"URL scheme must be http or https, got {parsed.scheme!r}")
+    hostname = parsed.hostname
+    if not hostname:
+        raise ValueError("URL has no hostname")
+    # Block cloud metadata endpoints
+    if hostname in ("metadata.google.internal", "metadata.google.com"):
+        raise ValueError(f"Blocked cloud metadata endpoint: {hostname}")
+    try:
+        addrs = getaddrinfo(hostname, parsed.port or (443 if parsed.scheme == "https" else 80))
+    except Exception:
+        return  # DNS failure will be caught by urllib later
+    for _family, _type, _proto, _canonname, sockaddr in addrs:
+        ip = ipaddress.ip_address(sockaddr[0])
+        for network in _BLOCKED_NETWORKS:
+            if ip in network:
+                raise ValueError(f"URL resolves to blocked internal address: {hostname} -> {ip}")
+
 
 SLUG_RE = re.compile(r"[^a-z0-9]+")
 SKIP_HINT_RE = re.compile(r"(nav|menu|footer|header|sidebar|cookie|share|promo|banner)", re.I)
@@ -212,6 +250,7 @@ class SourceFetcher:
         source_type = "github" if "github.com" in url else "web"
 
         try:
+            validate_url_not_internal(url)
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Auto-Research)"})
             raw, tls_verification = self._read_response(req, timeout=timeout, max_bytes=max_bytes)
             html = raw.decode("utf-8", errors="replace")
@@ -258,16 +297,8 @@ class SourceFetcher:
         timeout: int,
         max_bytes: int,
     ) -> tuple[bytes, str]:
-        try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return resp.read(max_bytes), "verified"
-        except Exception as exc:
-            if not _is_certificate_error(exc):
-                raise
-            logger.warning("Retrying fetch without TLS verification for %s", req.full_url)
-            insecure_context = ssl._create_unverified_context()
-            with urllib.request.urlopen(req, timeout=timeout, context=insecure_context) as resp:
-                return resp.read(max_bytes), "insecure_fallback"
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read(max_bytes), "verified"
 
     def write_to_session(
         self,
@@ -325,14 +356,3 @@ def _escape_yaml(text: str) -> str:
     return text.replace('"', '\\"').replace("\n", " ")
 
 
-def _is_certificate_error(exc: object) -> bool:
-    if isinstance(exc, ssl.SSLCertVerificationError):
-        return True
-    if isinstance(exc, urllib.error.URLError):
-        return _is_certificate_error(exc.reason)
-    message = str(exc).lower()
-    return (
-        "certificate verify failed" in message
-        or "certificate_verify_failed" in message
-        or "self-signed certificate" in message
-    )

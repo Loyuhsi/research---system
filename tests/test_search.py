@@ -161,29 +161,17 @@ class TestSourceFetcher:
         result = fetcher.fetch_and_parse("http://127.0.0.1:1/github.com/test", timeout=1)
         assert result.source_type == "github"
 
-    def test_fetch_ssl_certificate_fallback(self, monkeypatch):
-        """Certificate verification errors should retry with an unverified TLS context once."""
+    def test_fetch_ssl_certificate_error_not_silenced(self, monkeypatch):
+        """Certificate verification errors must NOT be silently bypassed (no insecure fallback)."""
         fetcher = SourceFetcher()
 
-        class _Response:
-            def __enter__(self):
-                return self
-
-            def __exit__(self, exc_type, exc, tb):
-                return False
-
-            def read(self, max_bytes):
-                return b"<html><title>Doc</title><p>Structured outputs keep JSON stable.</p></html>"
-
         def fake_urlopen(req, timeout=0, context=None):
-            if context is None:
-                raise urllib.error.URLError(
-                    ssl.SSLCertVerificationError("certificate verify failed: self-signed certificate")
-                )
-            return _Response()
+            import ssl
+            raise urllib.error.URLError(
+                ssl.SSLCertVerificationError("certificate verify failed: self-signed certificate")
+            )
 
         monkeypatch.setattr("urllib.request.urlopen", fake_urlopen)
         result = fetcher.fetch_and_parse("https://example.com/docs", timeout=1)
-        assert result.fetch_status == "ok"
-        assert result.metadata["tls_verification"] == "insecure_fallback"
-        assert "Structured outputs" in result.content
+        assert result.fetch_status == "error"
+        assert "certificate" in (result.error or "").lower()

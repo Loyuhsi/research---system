@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
+import secrets
 import threading
 import time
 from dataclasses import dataclass
@@ -42,10 +44,11 @@ class PiSkill:
 
 
 class PiRouter:
-    def __init__(self, orchestrator: Any, host: str = "127.0.0.1", port: int = 8787) -> None:
+    def __init__(self, orchestrator: Any, host: str = "127.0.0.1", port: int = 8787, bearer_token: str = "") -> None:
         self.orchestrator = orchestrator
         self.host = host
         self.port = port
+        self.bearer_token = bearer_token
         self.skills = self._build_skills()
 
     def dispatch(
@@ -244,6 +247,9 @@ class PiRequestHandler(BaseHTTPRequestHandler):
 
     def _dispatch(self, method: str) -> None:
         try:
+            if not self._check_auth():
+                self._write_json(HTTPStatus.UNAUTHORIZED, {"ok": False, "error": "Unauthorized"})
+                return
             body = self._read_json_body() if method == "POST" else {}
             status, payload = self.router.dispatch(method, self.path, body)
         except ValueError as exc:
@@ -277,15 +283,26 @@ class PiRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _check_auth(self) -> bool:
+        """Validate Bearer token if configured. /health is always open."""
+        if not self.router.bearer_token:
+            return True
+        if self.path == "/health":
+            return True
+        auth_header = self.headers.get("Authorization", "")
+        expected = f"Bearer {self.router.bearer_token}"
+        return auth_header == expected
+
     def log_message(self, format: str, *args: object) -> None:
         logger.debug("Pi runtime: " + format, *args)
 
 
 class PiRuntimeServer:
-    def __init__(self, orchestrator: Any, host: str = "127.0.0.1", port: int = 8787) -> None:
+    def __init__(self, orchestrator: Any, host: str = "127.0.0.1", port: int = 8787, bearer_token: str = "") -> None:
         self.host = host
         self.port = port
-        self.router = PiRouter(orchestrator, host=host, port=port)
+        self.bearer_token = bearer_token
+        self.router = PiRouter(orchestrator, host=host, port=port, bearer_token=bearer_token)
         handler_cls = type("BoundPiRequestHandler", (PiRequestHandler,), {})
         handler_cls.router = self.router
         self._server = ThreadingHTTPServer((host, port), handler_cls)
@@ -311,7 +328,17 @@ class PiRuntimeServer:
 
 
 def build_pi_runtime(orchestrator: Any | None = None, host: str = "127.0.0.1", port: int = 8787) -> PiRuntimeServer:
-    return PiRuntimeServer(orchestrator or bootstrap(), host=host, port=port)
+    token = os.environ.get("PI_RUNTIME_TOKEN", "")
+    if not token:
+        token = secrets.token_urlsafe(32)
+        logger.info("Generated Pi runtime bearer token (set PI_RUNTIME_TOKEN to override)")
+    server = PiRuntimeServer(orchestrator or bootstrap(), host=host, port=port, bearer_token=token)
+    # Write token to .runtime/ for authorized clients
+    runtime_dir = Path(".runtime")
+    runtime_dir.mkdir(parents=True, exist_ok=True)
+    (runtime_dir / "pi-token").write_text(token, encoding="utf-8")
+    logger.info("Pi runtime token written to .runtime/pi-token")
+    return server
 
 
 def _slug(text: str) -> str:
