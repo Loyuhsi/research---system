@@ -1,0 +1,19 @@
+{
+  "modes": {
+    "research_only": {
+      "description": "Low-risk research mode for local reasoning, web retrieval, cache import, and note synthesis.",
+      "frontend_allowlist": ["cli", "pi", "telegram"],
+      "tool_scopes": ["research", "notes", "promotion"]
+    },
+    "semi_trusted_tooling": {
+      "description": "Allowlisted local tooling mode for report generation and file conversion.",
+      "frontend_allowlist": ["cli", "pi"],
+      "tool_scopes": ["research", "notes", "promotion", "tooling"]
+    },
+    "high_risk_execution": {
+      "description": "Sandboxed Docker-backed execution mode for RD-Agent and controlled experimentation.",
+      "frontend_allowlist": ["cli", "pi"],
+      "tool_scopes": ["research", "notes", "promotion", "tooling", "rd_agent", "evo"]
+    }
+  }
+}

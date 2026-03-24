@@ -1,0 +1,2 @@
+[console_scripts]
+auto-research = auto_research.cli:main

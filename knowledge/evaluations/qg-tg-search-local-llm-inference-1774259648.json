@@ -1,0 +1,35 @@
+{
+  "eval_id": "qg-tg-search-local-llm-inference-1774259648",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T09:56:13.119191+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-search-local-llm-inference-1774259648",
+    "word_count": 32,
+    "structure_score": 0.46,
+    "provenance_score": 0.4933333333333333,
+    "evidence_count": 3,
+    "source_diversity": 1,
+    "response_mode": "content",
+    "retry_count": 0,
+    "retrieval_metadata": {
+      "budget_bytes": 10240,
+      "used_bytes": 10006,
+      "packed_sections": 5,
+      "candidate_sections": 6,
+      "selected_sources": [
+        "web-github-vince-lam-awesome-local-llms-comp.md",
+        "web-local-llm-inference-in-2026-the-complete.md",
+        "web-top-5-local-llm-tools-and-models-in-2026.md"
+      ],
+      "dropped_sections": 1,
+      "search_provider": "duckduckgo_html",
+      "extractor": "heuristic_html",
+      "context_window": 4096,
+      "estimated_prompt_tokens": 2701
+    }
+  }
+}

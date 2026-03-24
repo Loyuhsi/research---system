@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: auto-research
+Version: 0.3.0
+Summary: Local auto-research system with LLM synthesis
+Requires-Python: >=3.11
+Provides-Extra: telegram
+Requires-Dist: requests<3,>=2.31; extra == "telegram"
+Provides-Extra: scrapling
+Requires-Dist: scrapling[ai]<1.0,>=0.3; extra == "scrapling"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"

@@ -1,0 +1,16 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.11, pytest-9.0.2, pluggy-1.5.0
+rootdir: C:\Users\User\Desktop\新增資料夾 (7)
+configfile: pyproject.toml
+plugins: anyio-4.12.1, cov-7.0.0
+collected 271 items
+
+tests\test_circuit_breaker.py .................                          [  6%]
+tests\test_config_schema.py ......................                       [ 14%]
+tests\test_conversation_store.py ............                            [ 18%]
+tests\test_discovery.py ............                                     [ 23%]
+tests\test_evaluation.py ..........                                      [ 26%]
+tests\test_event_handlers.py .........                                   [ 30%]
+tests\test_event_name_regression.py .......                              [ 32%]
+tests\test_events.py ..........                                          [ 36%]
+tests\test_evoskill.py ......                                            [ 38%]

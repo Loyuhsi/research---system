@@ -1,0 +1,69 @@
+# Runtime state
+.runtime/
+!.runtime/.gitkeep
+
+# Output artifacts (potentially large, potentially sensitive)
+output/sources/
+output/research/
+output/notes/
+output/logs/
+!output/sources/.gitkeep
+!output/research/.gitkeep
+!output/notes/.gitkeep
+!output/logs/.gitkeep
+
+# Sandbox and staging artifacts
+staging/
+sandbox/
+!staging/.gitkeep
+!staging/memory-drafts/.gitkeep
+!staging/tooling/.gitkeep
+!staging/skills-candidates/.gitkeep
+!sandbox/.gitkeep
+!sandbox/rd-agent/.gitkeep
+!sandbox/rd-agent/in/.gitkeep
+!sandbox/rd-agent/out/.gitkeep
+
+# Knowledge runtime logs
+knowledge/logs/
+knowledge/index/
+!knowledge/.gitkeep
+!knowledge/index/.gitkeep
+!knowledge/logs/.gitkeep
+!knowledge/memory-records/.gitkeep
+!knowledge/reports/.gitkeep
+!knowledge/datasets/.gitkeep
+!knowledge/skill-docs/.gitkeep
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Stderr files (may contain token fragments)
+*.stderr
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Coverage / testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS artifacts
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Results (runtime generated)
+results.tsv
+
+# Claude Code
+.claude/

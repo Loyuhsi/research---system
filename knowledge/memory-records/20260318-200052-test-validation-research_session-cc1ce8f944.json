@@ -1,0 +1,53 @@
+{
+  "id": "20260318-200052-test-validation-research_session-cc1ce8f944",
+  "title": "research_session: test-validation",
+  "summary": "## 摘要 本筆記依據來源文件 `example.com.md` 內容進行整理，主要說明 Example Domain 的適用情境與限制。 ## 關鍵發現 1. **文檔用途**：此網域可用於文檔範例，無需獲得許可。",
+  "tags": [
+    "test-validation",
+    "example",
+    "com",
+    "md",
+    "domain",
+    "web",
+    "public"
+  ],
+  "task_type": "research_session",
+  "source_types": [
+    "public",
+    "web"
+  ],
+  "tool_deps": [
+    "scrapling",
+    "scrapling.get"
+  ],
+  "citations": [
+    {
+      "citation_type": "artifact",
+      "label": "research status",
+      "path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\research\\20260318-200052-test-validation\\status.json"
+    },
+    {
+      "citation_type": "artifact",
+      "label": "research note",
+      "path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\notes\\20260318-200052-test-validation.md"
+    },
+    {
+      "citation_type": "artifact",
+      "label": "example.com.md",
+      "path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\research\\20260318-200052-test-validation\\parsed\\example.com.md"
+    }
+  ],
+  "confidence": 0.8,
+  "success_count": 1,
+  "failure_count": 0,
+  "risk_level": "low",
+  "last_validated_at": "2026-03-18T12:02:02.272725+00:00",
+  "expires_at": "2026-04-15T12:01:50.085964+00:00",
+  "related_skills": [],
+  "obsidian_links": [],
+  "status": "approved",
+  "session_id": "20260318-200052-test-validation",
+  "created_at": "2026-03-18T12:01:50.085964+00:00",
+  "updated_at": "2026-03-18T12:02:02.272725+00:00",
+  "approved_at": "2026-03-18T12:02:02.272725+00:00"
+}

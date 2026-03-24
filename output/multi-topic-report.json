@@ -1,0 +1,143 @@
+[
+  {
+    "topic": "Local LLM inference optimization techniques",
+    "session_id": "multi-llm-opt",
+    "success": true,
+    "quality": {
+      "coverage_score": 0.0,
+      "hallucination_flags": [
+        "High unsupported content ratio: 100%"
+      ],
+      "structure_score": 0.84,
+      "word_count": 52,
+      "passed": false,
+      "evidence_count": 1,
+      "source_diversity": 1,
+      "provenance_score": 0.253,
+      "retrieval_metadata": {
+        "budget_bytes": 26624,
+        "used_bytes": 1071,
+        "packed_sections": 6,
+        "candidate_sections": 6,
+        "selected_sources": [
+          "source_01.md"
+        ],
+        "dropped_sections": 0,
+        "search_provider": "",
+        "extractor": "",
+        "context_window": 8192,
+        "estimated_prompt_tokens": 467
+      },
+      "response_mode": "content",
+      "retry_count": 0,
+      "source_ranking": {
+        "total": 1,
+        "usable": 1,
+        "filtered_out": 0,
+        "scores": [
+          {
+            "filename": "source_01.md",
+            "size_bytes": 866,
+            "has_content": true,
+            "word_count": 115,
+            "quality_score": 0.477
+          }
+        ]
+      }
+    }
+  },
+  {
+    "topic": "Supply chain security in Python packaging",
+    "session_id": "multi-supply-chain",
+    "success": true,
+    "quality": {
+      "coverage_score": 0.462,
+      "hallucination_flags": [
+        "Moderate unsupported content ratio: 66%"
+      ],
+      "structure_score": 0.84,
+      "word_count": 116,
+      "passed": false,
+      "evidence_count": 1,
+      "source_diversity": 1,
+      "provenance_score": 0.253,
+      "retrieval_metadata": {
+        "budget_bytes": 26624,
+        "used_bytes": 960,
+        "packed_sections": 6,
+        "candidate_sections": 6,
+        "selected_sources": [
+          "source_01.md"
+        ],
+        "dropped_sections": 0,
+        "search_provider": "",
+        "extractor": "",
+        "context_window": 8192,
+        "estimated_prompt_tokens": 440
+      },
+      "response_mode": "content",
+      "retry_count": 0,
+      "source_ranking": {
+        "total": 1,
+        "usable": 1,
+        "filtered_out": 0,
+        "scores": [
+          {
+            "filename": "source_01.md",
+            "size_bytes": 755,
+            "has_content": true,
+            "word_count": 106,
+            "quality_score": 0.47
+          }
+        ]
+      }
+    }
+  },
+  {
+    "topic": "Event-driven architecture patterns for research automation",
+    "session_id": "multi-event-driven",
+    "success": true,
+    "quality": {
+      "coverage_score": 0.087,
+      "hallucination_flags": [
+        "High unsupported content ratio: 78%"
+      ],
+      "structure_score": 0.84,
+      "word_count": 37,
+      "passed": false,
+      "evidence_count": 1,
+      "source_diversity": 1,
+      "provenance_score": 0.253,
+      "retrieval_metadata": {
+        "budget_bytes": 26624,
+        "used_bytes": 911,
+        "packed_sections": 6,
+        "candidate_sections": 6,
+        "selected_sources": [
+          "source_01.md"
+        ],
+        "dropped_sections": 0,
+        "search_provider": "",
+        "extractor": "",
+        "context_window": 8192,
+        "estimated_prompt_tokens": 427
+      },
+      "response_mode": "content",
+      "retry_count": 0,
+      "source_ranking": {
+        "total": 1,
+        "usable": 1,
+        "filtered_out": 0,
+        "scores": [
+          {
+            "filename": "source_01.md",
+            "size_bytes": 706,
+            "has_content": true,
+            "word_count": 94,
+            "quality_score": 0.474
+          }
+        ]
+      }
+    }
+  }
+]

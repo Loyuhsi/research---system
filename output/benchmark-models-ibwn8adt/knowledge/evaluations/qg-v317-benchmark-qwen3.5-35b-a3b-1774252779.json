@@ -1,0 +1,31 @@
+{
+  "eval_id": "qg-v317-benchmark-qwen3.5-35b-a3b-1774252779",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T08:02:34.873046+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "v317-benchmark-qwen3.5-35b-a3b-1774252779",
+    "word_count": 75,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.2533333333333333,
+    "evidence_count": 1,
+    "source_diversity": 1,
+    "response_mode": "content",
+    "retry_count": 0,
+    "retrieval_metadata": {
+      "budget_bytes": 102400,
+      "used_bytes": 1674,
+      "packed_sections": 1,
+      "candidate_sections": 1,
+      "selected_sources": [
+        "seed-benchmark.md"
+      ],
+      "dropped_sections": 0,
+      "search_provider": "",
+      "extractor": ""
+    }
+  }
+}

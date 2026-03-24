@@ -1,0 +1,126 @@
+{
+  "topic": "LM Studio structured output Ollama structured outputs vLLM structured outputs docs",
+  "started_at_epoch": 1774264950.8605464,
+  "message": "研究完成：LM Studio structured output Ollama structured outputs vLLM structured outputs docs\nSession: tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952\nProvider: lmstudio / nvidia/nemotron-3-nano\nWords: 86\nCoverage: 0.0\nQG Pass: False\nObsidian：tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952.md",
+  "session_id": "tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+  "report": {
+    "session_id": "tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+    "topic": "LM Studio structured output Ollama structured outputs vLLM structured outputs docs",
+    "provider": "lmstudio",
+    "model": "nvidia/nemotron-3-nano",
+    "source_count": 3,
+    "quality_score": 0.393,
+    "quality": {
+      "coverage_score": 0.0,
+      "hallucination_flags": [
+        "High unsupported content ratio: 100%"
+      ],
+      "structure_score": 0.84,
+      "word_count": 86,
+      "passed": false,
+      "evidence_count": 3,
+      "source_diversity": 1,
+      "provenance_score": 0.493,
+      "retrieval_metadata": {
+        "budget_bytes": 26624,
+        "used_bytes": 8625,
+        "packed_sections": 13,
+        "candidate_sections": 13,
+        "selected_sources": [
+          "web-structured-output-lm-studio-docs.md",
+          "web-structured-outputs-ollama.md",
+          "web-structured-outputs-vllm.md"
+        ],
+        "dropped_sections": 0,
+        "search_provider": "duckduckgo_html",
+        "extractor": "heuristic_html",
+        "context_window": 8192,
+        "estimated_prompt_tokens": 2356
+      },
+      "response_mode": "content",
+      "retry_count": 0,
+      "source_ranking": {
+        "total": 3,
+        "usable": 3,
+        "filtered_out": 0,
+        "scores": [
+          {
+            "filename": "web-structured-output-lm-studio-docs.md",
+            "size_bytes": 4265,
+            "has_content": true,
+            "word_count": 663,
+            "quality_score": 0.546
+          },
+          {
+            "filename": "web-structured-outputs-ollama.md",
+            "size_bytes": 4211,
+            "has_content": true,
+            "word_count": 601,
+            "quality_score": 0.454
+          },
+          {
+            "filename": "web-structured-outputs-vllm.md",
+            "size_bytes": 577,
+            "has_content": true,
+            "word_count": 51,
+            "quality_score": 0.388
+          }
+        ]
+      }
+    },
+    "memory_status": {
+      "approved_count": 0,
+      "draft_count": 0
+    },
+    "evaluation_status": {
+      "exists": true,
+      "eval_id": "qg-tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+      "eval_type": "quality_gate",
+      "passed": false,
+      "candidate_score": 0.0,
+      "timestamp": "2026-03-23T11:25:47.935798+00:00",
+      "metadata": {
+        "session_id": "tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+        "word_count": 86,
+        "structure_score": 0.8400000000000001,
+        "provenance_score": 0.4933333333333333,
+        "evidence_count": 3,
+        "source_diversity": 1,
+        "response_mode": "content",
+        "retry_count": 0,
+        "retrieval_metadata": {
+          "budget_bytes": 26624,
+          "used_bytes": 8625,
+          "packed_sections": 13,
+          "candidate_sections": 13,
+          "selected_sources": [
+            "web-structured-output-lm-studio-docs.md",
+            "web-structured-outputs-ollama.md",
+            "web-structured-outputs-vllm.md"
+          ],
+          "dropped_sections": 0,
+          "search_provider": "duckduckgo_html",
+          "extractor": "heuristic_html",
+          "context_window": 8192,
+          "estimated_prompt_tokens": 2356
+        }
+      }
+    },
+    "note_path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\notes\\tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952.md",
+    "status_path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\research\\tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952\\status.json",
+    "telemetry_summary": {
+      "count": 1,
+      "events": [
+        {
+          "ts": "2026-03-23T11:25:47.968206+00:00",
+          "event_type": "synthesize",
+          "summary": "Synthesized note for topic 'LM Studio structured output Ollama structured outputs vLLM structured outputs docs' in session tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952.",
+          "status": "success"
+        }
+      ]
+    },
+    "trace_summary": {
+      "exists": false
+    }
+  }
+}

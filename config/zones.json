@@ -1,0 +1,34 @@
+{
+  "zones": {
+    "trusted_control": {
+      "roots": ["config", "src", "scripts", "skills", "output/notes", "knowledge"],
+      "localhost_allowlist": ["http://127.0.0.1:11434", "http://127.0.0.1:1234"],
+      "secrets_visible": false
+    },
+    "research_tool": {
+      "roots": ["output/research", "output/sources"],
+      "localhost_allowlist": ["http://127.0.0.1:8010"],
+      "secrets_visible": false
+    },
+    "execution_sandbox": {
+      "roots": ["sandbox/rd-agent", "staging/tooling", "staging/skills-candidates"],
+      "localhost_allowlist": [],
+      "secrets_visible": false
+    },
+    "secrets": {
+      "roots": [".env", ".runtime/service-endpoints.env"],
+      "localhost_allowlist": [],
+      "secrets_visible": true
+    }
+  },
+  "obsidian": {
+    "env_var": "VAULT_ROOT",
+    "required_subdir": "10_Research/AutoResearch"
+  },
+  "secret_env_allowlist": ["GITHUB_TOKEN", "PRIVATE_DOCS_TOKEN", "LMSTUDIO_API_KEY", "VAULT_ROOT"],
+  "tool_env_allowlist": {
+    "libreoffice-convert": [],
+    "drawio-export": [],
+    "nbconvert-render": []
+  }
+}

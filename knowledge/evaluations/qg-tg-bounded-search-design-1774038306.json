@@ -1,0 +1,17 @@
+{
+  "eval_id": "qg-tg-bounded-search-design-1774038306",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-20T20:25:37.887071+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-bounded-search-design-1774038306",
+    "word_count": 17,
+    "structure_score": 0.54,
+    "provenance_score": 0.2533333333333333,
+    "evidence_count": 1,
+    "source_diversity": 1
+  }
+}

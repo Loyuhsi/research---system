@@ -1,0 +1,34 @@
+{
+  "eval_id": "qg-tg-search-local-llm-inference-1774264351",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T11:16:47.014830+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-search-local-llm-inference-1774264351",
+    "word_count": 99,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.3733333333333333,
+    "evidence_count": 2,
+    "source_diversity": 1,
+    "response_mode": "structured:reasoning_content",
+    "retry_count": 1,
+    "retrieval_metadata": {
+      "budget_bytes": 10240,
+      "used_bytes": 9782,
+      "packed_sections": 4,
+      "candidate_sections": 5,
+      "selected_sources": [
+        "web-local-llm-inference-in-2026-the-complete.md",
+        "web-top-5-local-llm-tools-and-models-in-2026.md"
+      ],
+      "dropped_sections": 1,
+      "search_provider": "duckduckgo_html",
+      "extractor": "heuristic_html",
+      "context_window": 4096,
+      "estimated_prompt_tokens": 2645
+    }
+  }
+}

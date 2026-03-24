@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "fully_verified": 4,
+    "blocked_by_environment": 0,
+    "failed": 0,
+    "total": 4
+  },
+  "tests": [
+    {
+      "name": "tests/e2e/test_e2e_chat.py::TestE2EChat::test_real_chat_returns_content",
+      "status": "passed",
+      "latency_ms": 90346.8
+    },
+    {
+      "name": "tests/e2e/test_e2e_chat.py::TestE2EChat::test_chat_breaker_stays_closed",
+      "status": "passed",
+      "latency_ms": 90244.0
+    },
+    {
+      "name": "tests/e2e/test_e2e_memory.py::TestE2EMemory::test_full_memory_lifecycle",
+      "status": "passed",
+      "latency_ms": 93.6
+    },
+    {
+      "name": "tests/e2e/test_e2e_synthesize.py::TestE2ESynthesize::test_synthesize_produces_note",
+      "status": "passed",
+      "latency_ms": 90.8
+    }
+  ]
+}

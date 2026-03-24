@@ -1,0 +1,25 @@
+{
+  "bindings": {
+    "libreoffice-convert": {
+      "description": "Convert office-compatible documents with LibreOffice headless mode.",
+      "command": ["soffice", "--headless", "--convert-to", "{format}", "--outdir", "{output_dir}", "{source}"],
+      "allowed_modes": ["semi_trusted_tooling", "high_risk_execution"],
+      "allowed_output_roots": ["staging/tooling", "output"],
+      "pass_env": []
+    },
+    "drawio-export": {
+      "description": "Export draw.io diagrams through the desktop CLI.",
+      "command": ["draw.io", "--export", "--format", "{format}", "--output", "{output}", "{source}"],
+      "allowed_modes": ["semi_trusted_tooling", "high_risk_execution"],
+      "allowed_output_roots": ["staging/tooling", "output"],
+      "pass_env": []
+    },
+    "nbconvert-render": {
+      "description": "Render notebooks to HTML with Jupyter nbconvert.",
+      "command": ["jupyter", "nbconvert", "--to", "html", "--output-dir", "{output_dir}", "{source}"],
+      "allowed_modes": ["semi_trusted_tooling", "high_risk_execution"],
+      "allowed_output_roots": ["staging/tooling", "output"],
+      "pass_env": []
+    }
+  }
+}

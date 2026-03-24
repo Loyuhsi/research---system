@@ -1,0 +1,31 @@
+{
+  "eval_id": "qg-tg-python-testing-1774256499",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T09:02:26.831368+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-python-testing-1774256499",
+    "word_count": 18,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.2533333333333333,
+    "evidence_count": 1,
+    "source_diversity": 1,
+    "response_mode": "content",
+    "retry_count": 0,
+    "retrieval_metadata": {
+      "budget_bytes": 102400,
+      "used_bytes": 63,
+      "packed_sections": 1,
+      "candidate_sections": 1,
+      "selected_sources": [
+        "seed.md"
+      ],
+      "dropped_sections": 0,
+      "search_provider": "",
+      "extractor": ""
+    }
+  }
+}

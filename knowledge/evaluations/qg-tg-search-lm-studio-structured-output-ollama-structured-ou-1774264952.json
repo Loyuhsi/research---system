@@ -1,0 +1,35 @@
+{
+  "eval_id": "qg-tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T11:25:47.935798+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-search-lm-studio-structured-output-ollama-structured-ou-1774264952",
+    "word_count": 86,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.4933333333333333,
+    "evidence_count": 3,
+    "source_diversity": 1,
+    "response_mode": "content",
+    "retry_count": 0,
+    "retrieval_metadata": {
+      "budget_bytes": 26624,
+      "used_bytes": 8625,
+      "packed_sections": 13,
+      "candidate_sections": 13,
+      "selected_sources": [
+        "web-structured-output-lm-studio-docs.md",
+        "web-structured-outputs-ollama.md",
+        "web-structured-outputs-vllm.md"
+      ],
+      "dropped_sections": 0,
+      "search_provider": "duckduckgo_html",
+      "extractor": "heuristic_html",
+      "context_window": 8192,
+      "estimated_prompt_tokens": 2356
+    }
+  }
+}

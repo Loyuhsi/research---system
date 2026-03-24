@@ -1,0 +1,49 @@
+{
+  "session_id": "v317-benchmark-nemotron-3-nano-1774263816",
+  "research_root": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\benchmark-models-bf1h_o5_\\output\\research\\v317-benchmark-nemotron-3-nano-1774263816",
+  "raw_dir": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\benchmark-models-bf1h_o5_\\output\\research\\v317-benchmark-nemotron-3-nano-1774263816\\raw",
+  "parsed_dir": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\benchmark-models-bf1h_o5_\\output\\research\\v317-benchmark-nemotron-3-nano-1774263816\\parsed",
+  "note_path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\benchmark-models-bf1h_o5_\\output\\notes\\v317-benchmark-nemotron-3-nano-1774263816.md",
+  "quality": {
+    "coverage_score": 0.038,
+    "hallucination_flags": [
+      "High unsupported content ratio: 93%"
+    ],
+    "structure_score": 0.84,
+    "word_count": 62,
+    "passed": false,
+    "evidence_count": 1,
+    "source_diversity": 1,
+    "provenance_score": 0.253,
+    "retrieval_metadata": {
+      "budget_bytes": 26624,
+      "used_bytes": 1674,
+      "packed_sections": 1,
+      "candidate_sections": 1,
+      "selected_sources": [
+        "seed-benchmark.md"
+      ],
+      "dropped_sections": 0,
+      "search_provider": "",
+      "extractor": "",
+      "context_window": 8192,
+      "estimated_prompt_tokens": 618
+    },
+    "response_mode": "content",
+    "retry_count": 0,
+    "source_ranking": {
+      "total": 1,
+      "usable": 1,
+      "filtered_out": 0,
+      "scores": [
+        {
+          "filename": "seed-benchmark.md",
+          "size_bytes": 1712,
+          "has_content": true,
+          "word_count": 210,
+          "quality_score": 0.331
+        }
+      ]
+    }
+  }
+}

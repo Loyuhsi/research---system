@@ -1,0 +1,66 @@
+[project]
+name = "auto-research"
+version = "0.3.18"
+description = "Local auto-research system with LLM synthesis"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+telegram = ["requests>=2.31,<3"]
+scrapling = ["scrapling[ai]>=0.3,<1.0"]
+dev = ["pytest>=8.0", "pytest-cov>=4.1"]
+memory = ["sqlite-vec>=0.1,<1.0"]
+
+[project.scripts]
+auto-research = "auto_research.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--cov=auto_research --cov-report=term-missing --cov-fail-under=80 -m 'not e2e'"
+markers = [
+    "e2e: end-to-end tests requiring real LLM services (Ollama)",
+]
+
+[tool.coverage.run]
+omit = [
+    "src/auto_research/cli.py",
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "auto_research.circuit_breaker",
+    "auto_research.resource_guard",
+    "auto_research.config_schema",
+    "auto_research.events",
+    "auto_research.event_handlers",
+    "auto_research.exceptions",
+    "auto_research.session_preferences",
+    "auto_research.structured_output",
+    "auto_research.compat",
+    "auto_research.services.delegation",
+    "auto_research.services.report",
+    "auto_research.services.fetcher",
+    "auto_research.services.skill_memory.models",
+    "auto_research.tracing",
+]
+disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["auto_research.orchestrator"]
+warn_return_any = false
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

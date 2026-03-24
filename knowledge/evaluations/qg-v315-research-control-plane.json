@@ -1,0 +1,17 @@
+{
+  "eval_id": "qg-v315-research-control-plane",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-20T15:06:14.869933+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "v315-research-control-plane",
+    "word_count": 47,
+    "structure_score": 0.54,
+    "provenance_score": 0.2533333333333333,
+    "evidence_count": 1,
+    "source_diversity": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "eval_id": "qg-v317-benchmark-nemotron-3-nano-1774035514",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.038461538461538464,
+  "passed": false,
+  "timestamp": "2026-03-20T19:39:47.856711+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "v317-benchmark-nemotron-3-nano-1774035514",
+    "word_count": 104,
+    "structure_score": 0.54,
+    "provenance_score": 0.2533333333333333,
+    "evidence_count": 1,
+    "source_diversity": 1
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "eval_id": "qg-tg-search-local-llm-inference-1774260673",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T10:13:47.472634+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-search-local-llm-inference-1774260673",
+    "word_count": 87,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.4933333333333333,
+    "evidence_count": 3,
+    "source_diversity": 1,
+    "response_mode": "structured:reasoning_content",
+    "retry_count": 1,
+    "retrieval_metadata": {
+      "budget_bytes": 10240,
+      "used_bytes": 10225,
+      "packed_sections": 3,
+      "candidate_sections": 9,
+      "selected_sources": [
+        "web-local-ai-in-2026-ollama-benchmarks-0-inf.md",
+        "web-local-llm-inference-in-2026-the-complete.md",
+        "web-top-5-local-llm-tools-and-models-in-2026.md"
+      ],
+      "dropped_sections": 6,
+      "search_provider": "duckduckgo_html",
+      "extractor": "heuristic_html",
+      "context_window": 4096,
+      "estimated_prompt_tokens": 2756
+    }
+  }
+}

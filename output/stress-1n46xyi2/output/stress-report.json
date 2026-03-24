@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-03-23T11:04:52Z",
+  "provider": "lmstudio",
+  "model": "nvidia/nemotron-3-nano",
+  "tests": [
+    {
+      "test": "llm_latency",
+      "rounds": 3,
+      "errors": 0,
+      "latencies_s": [
+        20.352,
+        20.35,
+        18.777
+      ],
+      "avg_s": 19.826,
+      "max_s": 20.352,
+      "min_s": 18.777,
+      "passed": true
+    },
+    {
+      "test": "large_source_bundle",
+      "max_bytes": 102400,
+      "content_size": 102384,
+      "truncated_size": 102384,
+      "processing_s": 0.0,
+      "passed": true
+    },
+    {
+      "test": "memory_index",
+      "record_count": 20,
+      "rebuild_s": 0.477,
+      "query_s": 0.033,
+      "query_hits": 3,
+      "passed": true
+    },
+    {
+      "test": "concurrent_sessions",
+      "session_count": 3,
+      "setup_s": 0.0044,
+      "all_created": true,
+      "passed": true
+    },
+    {
+      "test": "provider_selection",
+      "rounds": 3,
+      "errors": 0,
+      "provider_distribution": {
+        "lmstudio": 3
+      },
+      "reason_distribution": {
+        "auto_primary": 3
+      },
+      "avg_s": 2.521,
+      "passed": true
+    },
+    {
+      "test": "breaker_state",
+      "breaker_states": [
+        {
+          "provider": "ollama",
+          "state": "closed",
+          "failure_count": 0
+        },
+        {
+          "provider": "lmstudio",
+          "state": "closed",
+          "failure_count": 0
+        },
+        {
+          "provider": "vllm",
+          "state": "closed",
+          "failure_count": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "test": "readiness_cache",
+      "rounds": 3,
+      "cold_s": 7.625,
+      "warm_s": 0.0,
+      "speedup": 7625.3,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

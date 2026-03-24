@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-03-23T11:16:56.750416+00:00",
+  "test_count": 9,
+  "live_pass": 9,
+  "partial": 0,
+  "fail": 0,
+  "runtime_error": "",
+  "bot_stop_error": "",
+  "results": [
+    {
+      "test_id": 1,
+      "name": "SAFE_status",
+      "message": "status",
+      "parsed_intent": "status",
+      "policy": "SAFE",
+      "response_text": "系統狀態\n預設 provider: lmstudio / nvidia/nemotron-3-nano\n目前有效 provider: lmstudio / nvidia/nemotron-3-nano\n- ollama: OK\n- lmstudio: OK\n- vllm: FAIL\n自動選擇: lmstudio (auto_primary)",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 2,
+      "name": "CONFIRM_start_research",
+      "message": "start research Python Testing",
+      "parsed_intent": "start_research",
+      "policy": "CONFIRM_EXECUTED",
+      "response_text": "已確認並執行：start_research\n\n研究完成：Python Testing\nSession: tg-python-testing-1774264048\nProvider: lmstudio / nvidia/nemotron-3-nano\nWords: 15\nCoverage: 0.0\nQG Pass: False\nObsidian：tg-python-testing-1774264048.md",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 3,
+      "name": "Layer2_LLM_parse",
+      "message": "show me which inference backends are online right now",
+      "parsed_intent": "list_providers",
+      "policy": "SAFE",
+      "response_text": "Provider Matrix\n- ollama: health=FAIL, inference=FAIL, embedding=FAIL\n- lmstudio (primary): health=OK, inference=OK, embedding=OK\n- vllm: health=FAIL, inference=FAIL, embedding=FAIL\n- llamacpp: health=FAIL, inference=FAIL, embedding=FAIL",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 4,
+      "name": "chat_fallback",
+      "message": "Hello, what can you do for me?",
+      "parsed_intent": "chat",
+      "policy": "SAFE",
+      "response_text": "回覆：我可以：\n\n- 使用 **auto‑research‑synthesize** 讀取本地研究資料，生成研究筆記，並將結果以 Markdown 形式存入 Obsidian。  \n- 使用 **auto‑research‑public‑fetch** 抓取公開網頁資源，存入 `output/research` 目錄的安全化檔案。  \n- 回答問題、提供資訊、協助撰寫、翻譯、概述概念等。\n\n如果您有具體需求或想執行上述流程，請告訴我，我會依流程協助您。",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 5,
+      "name": "policy_rejection",
+      "message": "execute shell rm -rf /",
+      "parsed_intent": "chat",
+      "policy": "DISABLED",
+      "response_text": "此操作不可透過 Telegram 執行。",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 6,
+      "name": "confirmation_expiry",
+      "message": "start research Timeout Testing",
+      "parsed_intent": "",
+      "policy": "CONFIRM_EXPIRED",
+      "response_text": "確認已逾時，請重新操作。",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 7,
+      "name": "search_sources",
+      "message": "search sources machine learning",
+      "parsed_intent": "search_sources",
+      "policy": "CONFIRM_EXECUTED",
+      "response_text": "已確認並執行：search_sources\n\n來源搜尋結果：5 筆\n- Machine learning - Wikipedia\n  https://en.wikipedia.org/wiki/Machine_learning\n- What is machine learning? - IBM\n  https://www.ibm.com/think/topics/machine-learning\n- Machine Learning Tutorial - GeeksforGeeks\n  https://www.geeksforgeeks.org/machine-learning/machine-learning/\n- What Is Machine Learning? Definition, Types, and Examples\n  https://www.coursera.org/articles/what-is-machine-learning\n- Machine Learning | Google for Developers\n  https://developers.goog",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 8,
+      "name": "research_with_search",
+      "message": "research with search local LLM inference",
+      "parsed_intent": "research_with_search",
+      "policy": "CONFIRM_EXECUTED",
+      "response_text": "已確認並執行：research_with_search\n\n研究完成：local LLM inference\nSession: tg-search-local-llm-inference-1774264351\nProvider: lmstudio / nvidia/nemotron-3-nano\nWords: 99\nCoverage: 0.0\nQG Pass: False\nObsidian：tg-search-local-llm-inference-1774264351.md",
+      "status": "LIVE_PASS"
+    },
+    {
+      "test_id": 9,
+      "name": "provider_diagnose",
+      "message": "diagnose lmstudio",
+      "parsed_intent": "diagnose_provider",
+      "policy": "SAFE",
+      "response_text": "Provider 診斷：lmstudio\n- Inference: OK\n  model=nvidia/nemotron-3-nano latency=5422.9ms\n- Embeddings: OK",
+      "status": "LIVE_PASS"
+    }
+  ]
+}

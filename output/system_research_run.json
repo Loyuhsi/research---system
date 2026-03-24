@@ -1,0 +1,108 @@
+{
+  "topic": "structured outputs for local LLM backends LM Studio Ollama vLLM",
+  "started_at_epoch": 1774264656.1318603,
+  "message": "研究完成：structured outputs for local LLM backends LM Studio Ollama vLLM\nSession: tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657\nProvider: lmstudio / nvidia/nemotron-3-nano\nWords: 114\nCoverage: 0.002\nQG Pass: False\nObsidian：tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657.md",
+  "session_id": "tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657",
+  "report": {
+    "session_id": "tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657",
+    "topic": "structured outputs for local LLM backends LM Studio Ollama vLLM",
+    "provider": "lmstudio",
+    "model": "nvidia/nemotron-3-nano",
+    "source_count": 1,
+    "quality_score": 0.346,
+    "quality": {
+      "coverage_score": 0.002,
+      "hallucination_flags": [
+        "High unsupported content ratio: 96%"
+      ],
+      "structure_score": 0.84,
+      "word_count": 114,
+      "passed": false,
+      "evidence_count": 1,
+      "source_diversity": 1,
+      "provenance_score": 0.253,
+      "retrieval_metadata": {
+        "budget_bytes": 26624,
+        "used_bytes": 18560,
+        "packed_sections": 2,
+        "candidate_sections": 2,
+        "selected_sources": [
+          "web-local-llm-hosting-complete-2025-guide-ol.md"
+        ],
+        "dropped_sections": 0,
+        "search_provider": "duckduckgo_html",
+        "extractor": "heuristic_html",
+        "context_window": 8192,
+        "estimated_prompt_tokens": 4840
+      },
+      "response_mode": "content",
+      "retry_count": 0,
+      "source_ranking": {
+        "total": 1,
+        "usable": 1,
+        "filtered_out": 0,
+        "scores": [
+          {
+            "filename": "web-local-llm-hosting-complete-2025-guide-ol.md",
+            "size_bytes": 19138,
+            "has_content": true,
+            "word_count": 2558,
+            "quality_score": 0.692
+          }
+        ]
+      }
+    },
+    "memory_status": {
+      "approved_count": 0,
+      "draft_count": 0
+    },
+    "evaluation_status": {
+      "exists": true,
+      "eval_id": "qg-tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657",
+      "eval_type": "quality_gate",
+      "passed": false,
+      "candidate_score": 0.0015772870662460567,
+      "timestamp": "2026-03-23T11:21:05.079969+00:00",
+      "metadata": {
+        "session_id": "tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657",
+        "word_count": 114,
+        "structure_score": 0.8400000000000001,
+        "provenance_score": 0.2533333333333333,
+        "evidence_count": 1,
+        "source_diversity": 1,
+        "response_mode": "content",
+        "retry_count": 0,
+        "retrieval_metadata": {
+          "budget_bytes": 26624,
+          "used_bytes": 18560,
+          "packed_sections": 2,
+          "candidate_sections": 2,
+          "selected_sources": [
+            "web-local-llm-hosting-complete-2025-guide-ol.md"
+          ],
+          "dropped_sections": 0,
+          "search_provider": "duckduckgo_html",
+          "extractor": "heuristic_html",
+          "context_window": 8192,
+          "estimated_prompt_tokens": 4840
+        }
+      }
+    },
+    "note_path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\notes\\tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657.md",
+    "status_path": "C:\\Users\\User\\Desktop\\新增資料夾 (7)\\output\\research\\tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657\\status.json",
+    "telemetry_summary": {
+      "count": 1,
+      "events": [
+        {
+          "ts": "2026-03-23T11:21:05.118151+00:00",
+          "event_type": "synthesize",
+          "summary": "Synthesized note for topic 'structured outputs for local LLM backends LM Studio Ollama vLLM' in session tg-search-structured-outputs-for-local-llm-backends-lm-stu-1774264657.",
+          "status": "success"
+        }
+      ]
+    },
+    "trace_summary": {
+      "exists": false
+    }
+  }
+}

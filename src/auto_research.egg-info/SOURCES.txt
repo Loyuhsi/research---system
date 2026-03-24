@@ -1,0 +1,17 @@
+pyproject.toml
+src/auto_research/__init__.py
+src/auto_research/cli.py
+src/auto_research/conversation_store.py
+src/auto_research/http_client.py
+src/auto_research/log.py
+src/auto_research/orchestrator.py
+src/auto_research/runtime.py
+src/auto_research.egg-info/PKG-INFO
+src/auto_research.egg-info/SOURCES.txt
+src/auto_research.egg-info/dependency_links.txt
+src/auto_research.egg-info/entry_points.txt
+src/auto_research.egg-info/requires.txt
+src/auto_research.egg-info/top_level.txt
+tests/test_orchestrator.py
+tests/test_runtime.py
+tests/test_telegram_bot.py

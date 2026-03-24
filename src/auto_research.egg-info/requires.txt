@@ -1,0 +1,9 @@
+
+[dev]
+pytest>=8.0
+
+[scrapling]
+scrapling[ai]<1.0,>=0.3
+
+[telegram]
+requests<3,>=2.31

@@ -1,0 +1,92 @@
+FAIL | test_circuit_breaker.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_config_schema.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_conversation_store.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_discovery.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_evaluation.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_event_handlers.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_event_name_regression.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_events.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_evoskill.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_llm_breaker_guard.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_logging_config.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_orchestrator.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_provider_matrix.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_quality_gate.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_reflection.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_registry.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_resource_guard.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_runtime.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_skill_memory.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_task_review.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_telegram_bot.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_tool_runner.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)
+FAIL | test_tracing.py | no output
+      ERR: __main__.py: error: unrecognized arguments: --timeout=30
+      ERR:   inifile: c:\Users\User\Desktop\新增資料夾 (7)\pyproject.toml
+      ERR:   rootdir: c:\Users\User\Desktop\新增資料夾 (7)

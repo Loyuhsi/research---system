@@ -1,0 +1,34 @@
+{
+  "eval_id": "qg-tg-search-local-llm-inference-1774263405",
+  "eval_type": "quality_gate",
+  "baseline_score": 0.0,
+  "candidate_score": 0.0,
+  "passed": false,
+  "timestamp": "2026-03-23T11:02:26.205227+00:00",
+  "artifact_paths": [],
+  "metadata": {
+    "session_id": "tg-search-local-llm-inference-1774263405",
+    "word_count": 65,
+    "structure_score": 0.8400000000000001,
+    "provenance_score": 0.3733333333333333,
+    "evidence_count": 2,
+    "source_diversity": 1,
+    "response_mode": "content",
+    "retry_count": 0,
+    "retrieval_metadata": {
+      "budget_bytes": 26624,
+      "used_bytes": 9630,
+      "packed_sections": 3,
+      "candidate_sections": 3,
+      "selected_sources": [
+        "web-github-vince-lam-awesome-local-llms-comp.md",
+        "web-local-llm-inference-in-2026-the-complete.md"
+      ],
+      "dropped_sections": 0,
+      "search_provider": "duckduckgo_html",
+      "extractor": "heuristic_html",
+      "context_window": 8192,
+      "estimated_prompt_tokens": 2607
+    }
+  }
+}
