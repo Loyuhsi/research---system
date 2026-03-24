@@ -162,6 +162,9 @@ def _fts5_search(
     limit: int = 20,
 ) -> Dict[str, float]:
     """Run FTS5 MATCH on a virtual table. Returns {entity_id: rank}."""
+    _ALLOWED_FTS = {"memory_fts": "id", "skills_fts": "skill_id"}
+    if table not in _ALLOWED_FTS or id_col != _ALLOWED_FTS[table]:
+        raise ValueError(f"Disallowed FTS table/column: {table}.{id_col}")
     if not config.memory_index_path.exists():
         return {}
     fts_query = _build_fts5_query(query)

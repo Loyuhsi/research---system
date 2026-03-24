@@ -30,9 +30,6 @@ from .registry import ServiceRegistry
 
 logger = setup_logging(__name__)
 
-# Defaults kept for backward compatibility; prefer config.max_history_rounds / config.max_source_bytes
-MAX_HISTORY_ROUNDS = 12
-MAX_SOURCE_BYTES = 102400
 SLUG_RE = re.compile(r"[^a-z0-9]+")
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?", re.DOTALL)
 
@@ -480,7 +477,9 @@ class Orchestrator(BackwardCompatMixin):
             for item in memory_hits[:3]:
                 if not isinstance(item, Mapping):
                     continue
-                lines.append(f"- {item.get('title', 'memory')}: {item.get('summary', '')}")
+                title = str(item.get("title", "memory")).replace("\n", " ")[:80]
+                summary = str(item.get("summary", "")).replace("\n", " ")[:200]
+                lines.append(f"- {title}: {summary}")
 
         skill_hits = retrieved_context.get("skill_hits", [])
         if isinstance(skill_hits, list) and skill_hits:
@@ -489,7 +488,9 @@ class Orchestrator(BackwardCompatMixin):
             for item in skill_hits[:2]:
                 if not isinstance(item, Mapping):
                     continue
-                lines.append(f"- {item.get('title', item.get('skill_id', 'skill'))}: {item.get('summary', '')}")
+                title = str(item.get("title", item.get("skill_id", "skill"))).replace("\n", " ")[:80]
+                summary = str(item.get("summary", "")).replace("\n", " ")[:200]
+                lines.append(f"- {title}: {summary}")
 
         return "\n".join(lines)
 

@@ -63,11 +63,12 @@ class InMemoryConversationStore(ConversationStoreBase):
 
 
 class JsonFileConversationStore(ConversationStoreBase):
-    """Persistent store using JSON files in a directory."""
+    """Thread-safe persistent store using JSON files in a directory."""
 
     def __init__(self, store_dir: Path, max_rounds: int = MAX_HISTORY_ROUNDS):
         self.store_dir = store_dir
         self.max_rounds = max_rounds
+        self._lock = threading.RLock()
         self.store_dir.mkdir(parents=True, exist_ok=True)
 
     def _session_path(self, session_key: str) -> Path:
@@ -75,29 +76,32 @@ class JsonFileConversationStore(ConversationStoreBase):
         return self.store_dir / f"{safe_name}.json"
 
     def reset(self, session_key: str) -> None:
-        path = self._session_path(session_key)
-        if path.exists():
-            path.unlink()
+        with self._lock:
+            path = self._session_path(session_key)
+            if path.exists():
+                path.unlink()
 
     def get_messages(self, session_key: str) -> List[Dict[str, str]]:
-        path = self._session_path(session_key)
-        if not path.exists():
-            return []
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-            return data if isinstance(data, list) else []
-        except (json.JSONDecodeError, OSError) as exc:
-            logger.warning("Failed to read conversation %s: %s", session_key, exc)
-            return []
+        with self._lock:
+            path = self._session_path(session_key)
+            if not path.exists():
+                return []
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                return data if isinstance(data, list) else []
+            except (json.JSONDecodeError, OSError) as exc:
+                logger.warning("Failed to read conversation %s: %s", session_key, exc)
+                return []
 
     def append_turn(self, session_key: str, user_text: str, assistant_text: str) -> None:
-        messages = self.get_messages(session_key)
-        messages.extend([
-            {"role": "user", "content": user_text},
-            {"role": "assistant", "content": assistant_text},
-        ])
-        max_messages = self.max_rounds * 2
-        if len(messages) > max_messages:
-            del messages[:-max_messages]
-        path = self._session_path(session_key)
-        path.write_text(json.dumps(messages, ensure_ascii=False, indent=2), encoding="utf-8")
+        with self._lock:
+            messages = self.get_messages(session_key)
+            messages.extend([
+                {"role": "user", "content": user_text},
+                {"role": "assistant", "content": assistant_text},
+            ])
+            max_messages = self.max_rounds * 2
+            if len(messages) > max_messages:
+                del messages[:-max_messages]
+            path = self._session_path(session_key)
+            path.write_text(json.dumps(messages, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -7,19 +7,10 @@ New code should call the service directly.
 
 from __future__ import annotations
 
-import warnings
 from pathlib import Path
 from typing import Dict, Mapping, Optional
 
 from .services.report import ReportService
-
-
-def _deprecate(method_name: str, replacement: str) -> None:
-    warnings.warn(
-        f"Orchestrator.{method_name}() is deprecated. Use {replacement} directly.",
-        DeprecationWarning,
-        stacklevel=3,
-    )
 
 
 class BackwardCompatMixin:
